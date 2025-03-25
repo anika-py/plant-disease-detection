@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+        <a href="{{ url_for('diagnose') }}" class="nav-link">Diagnose</a>
+        <a href="#" class="nav-link">About Us</a>
+    </nav>
+    
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <img src="{{ url_for('static', filename='images/farmer.png') }}" alt="Farmer" class="farmer-img">
+            <h1>Leaf Lens</h1>
+            <p>Saving Plants, One Scan at a Time</p>
+            <button class="btn">Test Your Plant !</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/overlayTransition.js') }}"></script>
+
+</body>
+</html>

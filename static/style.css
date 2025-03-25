@@ -1,0 +1,282 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 10px; /* Slightly below the top for spacing */
+    left: 50%;
+    transform: translateX(-50%); /* Centers it horizontally */
+    width: 80%; /* Adjust width as needed */
+    background: #091B11;
+    opacity: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px; /* Rounded edges */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Navbar links */
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin: 0 20px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: gainsboro;
+}
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../static/images/crops.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10%;
+}
+
+/* Overlay Effect */
+.overlay {
+    position: fixed;
+    width: 80%;
+    height: 90%; /* Cover full viewport height */
+    background: rgba(136, 161, 103, 0.85); /* Adjusted color for a better blend */
+    border-top-left-radius: 700px;  /* Rounded effect on top-left */
+    border-bottom-right-radius: 800px; /* Smooth curve on bottom-right */
+    top: 40px; /* Slightly below the navbar */
+    left: 0;
+    transform: translateX(10%);
+    transition: all 0.5s ease-in-out;
+}
+
+/* When transitioning to Diagnose (Rectangle) */
+.overlay.expand {
+    position: fixed;
+    width: 80%;
+    height: 80%;
+    background: rgba(136, 161, 103, 0.85); 
+    border-radius: 30px; /* Soft rounded corners */
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%); /* Center it */
+    transition: all 0.8s ease-out;
+}
+
+
+/* Centering Content */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; /* Centers text and inline elements */
+    z-index: 2;
+    max-width: 500px;
+    color: #2D572C;
+}
+
+/* Adjust the farmer image */
+.farmer-img {
+    width: 200px;
+}
+
+/* Text styling */
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0px 0;
+    text-decoration: underline;
+    text-shadow: 2px 2px 4px rgba(202, 255, 223, 0.586);
+}
+
+p {
+    font-size: 18px;
+    color: #444;
+    margin: 10px 0;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    border: 2px dashed #2D572C;
+    border-radius: 25px;
+    margin-top: auto;
+    background: #2D572C;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.btn:hover {
+    background: none;
+    color: #2D572C;
+}
+
+/* Overlay - Positioned behind content */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    z-index: -1; /* Push behind everything */
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: -10px;
+}
+
+.healthy-img {
+    border-radius: 10px;
+    height: 250px;
+}
+
+.healthy-title {
+    font-size: 34px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    gap: 15px; /* Adds space between images */
+    margin-top: 20px;
+    margin-bottom: 30px; /* Adds space between images and form */
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Slightly move down for a smooth effect */
+    animation: fadeIn 0.5s ease-in-out forwards; /* Apply animation */
+}
+
+/* Keyframes for Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.image-row img {
+    width: 230px; /* Adjust size as needed */
+    height: auto;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #2e0f15;
+    border-radius: 10px; /* Optional: for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds shadow effect */
+}
+
+
+/* Main container: nearly full-screen */
+.disease-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: 1200px;
+    height: 80vh; /* Make it almost cover the screen */
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 1;
+    background: none; /* Semi-transparent green */
+}
+
+.heading {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Flexbox for inner layout */
+.disease-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Image section */
+.disease-image {
+    flex: 1;
+    max-width: 30%;
+    margin-right: 50px;
+}
+
+.disease-image img {
+    width: 130%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Disease info */
+.disease-info {
+    flex: 2;
+    padding: 10px;
+    color: #fff;
+}
+
+.disease-info h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.disease-info h2 {
+    font-size: 20px;
+}
+
+/* Solutions section */
+.disease-solutions {
+    flex: 2;
+    color: #fff;
+    text-align: justify;
+}
+
+.disease-solutions h3{
+    text-decoration: underline;
+}
+
+.disease-solutions a {
+    color: lightblue;
+    font-weight: bold;
+}
+
+.disease-solutions a:hover {
+    color: yellow;
+    text-decoration: underline;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    margin-top: -150px; /* Adds space between the container and button */
+}

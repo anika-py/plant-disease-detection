@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+        <a href="{{ url_for('diagnose') }}" class="nav-link">Diagnose</a>
+        <a href="#" class="nav-link">About Us</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="overlay expand"></div>
+
+        <div class="content">
+            <h2>Instructions for Use:</h2>
+            <div class="image-row">
+                <img src="{{ url_for('static', filename='images/1.png') }}" alt="Sample 1">
+                <img src="{{ url_for('static', filename='images/2.png') }}" alt="Sample 2">
+                <img src="{{ url_for('static', filename='images/3.png') }}" alt="Sample 3">
+                <img src="{{ url_for('static', filename='images/4.png') }}" alt="Sample 4">
+            </div>
+            <!-- Form to Upload Image -->
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="imageUpload" name="file" accept="image/png, image/jpeg, image/jpg" style="display: none;">
+                <button type="button" id="uploadBtn" class="btn">Test Your Plant!</button>
+                <p id="fileName" style="display: none;"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/overlayTransition.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/uploadHandler.js') }}"></script>
+
+</body>
+</html>
