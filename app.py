@@ -18,13 +18,13 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Load Binary Classification Model
-binary_model = tf.keras.models.load_model("plant_disease_website\\models\\binary_model.h5")
+binary_model = tf.keras.models.load_model("models\\binary_model.h5")
 
 # Load Multi-class Model
-multi_model = tf.keras.models.load_model("plant_disease_website\\models\\multi_model.h5")
+multi_model = tf.keras.models.load_model("models\\multi_model.h5")
 
 # Load CSV containing plant disease details
-csv_file = "plant_disease_website\\plant_diseases_data.csv"
+csv_file = "plant_diseases_data.csv"
 with open(csv_file, "rb") as f:
     result = chardet.detect(f.read())
     print(result["encoding"])
